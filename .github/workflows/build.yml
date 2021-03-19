@@ -15,5 +15,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install dependencies
         run: yarn install --check-files --frozen-lockfile
+      - name: Test
+        run: yarn test
       - name: Synthesize project files
         run: npx cdk synth
