@@ -11,13 +11,10 @@ jobs:
     env:
       CI: "true"
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install dependencies
-        run: yarn install --check-files --frozen-lockfile
-      - name: Test
-        run: yarn test
-      - name: Synthesize project files
-        run: npx cdk synth
+      - uses: actions/checkout@v2
+      - run: yarn install --check-files --frozen-lockfile
+      - run: npm i -g esbuild
+      - run: yarn test
+      - run: npx cdk synth
     container:
       image: jsii/superchain
