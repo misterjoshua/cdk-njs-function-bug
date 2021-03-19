@@ -19,3 +19,5 @@ jobs:
         run: yarn test
       - name: Synthesize project files
         run: npx cdk synth
+    container:
+      image: jsii/superchain
