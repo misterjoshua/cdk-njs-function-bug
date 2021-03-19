@@ -15,5 +15,5 @@ jobs:
       - run: yarn install --check-files --frozen-lockfile
       - run: yarn test
       - run: npx cdk synth
-    container:
-      image: jsii/superchain
+    # container:
+    #   image: jsii/superchain
