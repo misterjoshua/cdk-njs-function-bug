@@ -13,7 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: yarn install --check-files --frozen-lockfile
-      - run: npm i -g esbuild
       - run: yarn test
       - run: npx cdk synth
     container:
