@@ -6,8 +6,12 @@ export class NjsFunctionStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    new lambda_nodejs.NodejsFunction(this, 'function', {
+    const fn = new lambda_nodejs.NodejsFunction(this, 'function', {
       runtime: lambda.Runtime.NODEJS_14_X,
+    });
+
+    new cdk.CfnOutput(this, 'Name', {
+      value: fn.functionName,
     });
   }
 }
